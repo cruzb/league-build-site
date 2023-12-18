@@ -1,0 +1,30 @@
+<div class="row profile" *ngIf="!!champ">
+    <div class="col-lg-2 col-2">
+        <div class="profile__icon">
+            <img class="img-fluid" [src]="imageUrl + champ.image.full">
+        </div>
+    </div>
+    <div class="col-lg-10 col-10">
+        <div class="profile__info">
+            <div class="profile__info__core">
+                <div class="profile__info__core--header">
+                    <div class="tier s">
+                        S
+                    </div>
+                    <label class="champion-name">{{champ.name}} </label>
+                    <label class="champion-title">&nbsp;&nbsp; {{champ.title | titlecase}}</label>
+                </div>
+                <div class="profile__info__core--body">
+                    <div class="profile__info__core--body-spells">
+                        <app-champion-profile-spell [key]="'P'" [spell]="champ.passive"></app-champion-profile-spell>
+                        <ng-container *ngFor="let spell of champ.spells; let i = index">
+                            <app-champion-profile-spell [key]="keys[i]" [spell]="spell"></app-champion-profile-spell>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            
+            <app-champion-profile-stats [stats]="champ.stats"></app-champion-profile-stats>
+        </div>
+    </div>
+</div>

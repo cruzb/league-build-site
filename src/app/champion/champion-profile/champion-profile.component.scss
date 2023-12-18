@@ -1,0 +1,94 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+
+    div {
+        flex-grow: 1;
+    }
+
+    &__icon {
+        max-width: 128px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        &__core {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            &--header {
+                .champion-name {
+                    font-size: 35px;
+                    font-weight: 500;
+                    color: var(--color-text-primary);
+                }
+                .champion-title {
+                    font-size: 25px;
+                    font-weight: 500;
+                    color: var(--color-text-secondary);
+                }
+            }
+        
+            &--body {
+                margin-top: 10px;
+    
+                &-spells {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+.tier {
+    --border-color: white;
+    --glow-color: white;
+    border: 3px solid var(--border-color);
+    border-radius: 4px;
+    color: white;
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    font-size: 32px;
+    font-weight: 600;
+    flex-grow: 0;
+    display: inline-block;
+    text-align: center;
+    margin-right: .8em;
+
+    &.s {
+        --border-color: purple;
+        --glow-color: #600060;
+        box-shadow: 0 0 7px 1px var(--glow-color), inset 0 0 5px 1px var(--glow-color);
+    }
+    &.a {
+        --border-color: blue;
+    }
+    &.b {
+        --border-color: green;
+    }
+    &.c {
+        --border-color: yellow;
+    }
+    &.d {
+        --border-color: orange;
+    }
+    &.f {
+        --border-color: darkred;
+    }
+}

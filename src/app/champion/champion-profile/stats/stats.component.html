@@ -1,0 +1,22 @@
+<div class="stats-panel" *ngIf="!!stats">
+<div class="row">
+    <div class="col-12">
+        <span class="stats-panel__header">Difficulty</span>
+        <div class="progress">
+            <div class="progress-bar bg-danger color-override" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <img [src]="images.armor">
+        <span>{{stats.armor}}</span>
+    </div>
+    <div class="col-6">
+        <img [src]="images.magicresist">
+        <span>{{stats.spellblock}}</span>
+    </div>
+</div>
+This sucks change it
+</div>

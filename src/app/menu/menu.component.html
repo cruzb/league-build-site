@@ -1,0 +1,35 @@
+<nav>
+    <div class="container">
+        <div class="app-menu__container">
+            <a href="/Home">
+                <img class="app-menu--logo" *ngIf="pageTitle !== 'Home'; else title" src="https://cdn.discordapp.com/attachments/970160021549744198/1118732065534390312/quinn_icon.jpg">
+                <ng-template #title>
+                    <img class="app-menu--logo" src="https://cdn.discordapp.com/attachments/970160021549744198/1118732065534390312/quinn_icon.jpg">
+                </ng-template>
+            </a>
+            <h1 class="app-h1 ms-3 mt-3" *ngIf="pageTitle !== 'Home'">{{ pageTitle }}</h1>
+            <ul class="app-menu__categories">
+                <li class="app-menu__category">
+                    <a class="app-menu--category" href="/Home">Home</a>
+                </li>
+                <li class="app-menu__category" [ngClass]="{ 'app-menu__category--expanded': category.expanded }" *ngFor="let category of categories">
+                    <ng-container *ngIf="category.items.length > 1; else noDropdown">
+                        <a class="app-menu--category app-body" (click)="toggleDropdown(category)">
+                            {{ category.name }}<span class="fa fa-caret-{{ category.expanded ? 'up' : 'down' }}"></span>
+                        </a>
+                        <ul>
+                            <li *ngFor="let item of category.items">
+                                <a class="app-menu--item" href="{{ item.url }}">{{ item.name }}</a>
+                            </li>
+                        </ul>
+                    </ng-container>
+                    <ng-template #noDropdown>
+                        <a class="app-menu--category app-body" href="/{{category.items[0].url}}">
+                            {{ category.name }}
+                        </a>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

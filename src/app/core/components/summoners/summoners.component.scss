@@ -1,0 +1,56 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .summoners {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 5px;
+
+        &__header {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        &__content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 8px;
+    
+            img {
+                max-width: 48px;
+            }
+        }
+    }
+
+    .spell-order {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 5px;
+        justify-content: flex-end;
+
+        &__header {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+        }
+        &__content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 8px;
+    
+            img {
+                max-width: 48px;
+            }
+            .arrow {
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+    }
+}

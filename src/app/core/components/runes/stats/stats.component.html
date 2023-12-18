@@ -1,0 +1,8 @@
+<div class="rune-tree">
+    <div class="rune-tree__stat-row" *ngFor="let slot of rows">
+        <div class="clickable mt-2 rune-tree__stat-row--rune" *ngFor="let stat of slot.runes; let statIndex = index" 
+        (click)="slot.selectedIndex = statIndex">
+            <img [src]="stat.icon" [ngClass]="{ 'unselected': statIndex !== slot.selectedIndex, 'selected': statIndex === slot.selectedIndex }">
+        </div>
+    </div>
+</div>

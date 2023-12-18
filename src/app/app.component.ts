@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+<!--<app-header></app-header>-->
+<app-menu></app-menu>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+`,
 })
 export class AppComponent {
-  title = 'league-build-site';
 }

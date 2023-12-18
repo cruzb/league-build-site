@@ -1,0 +1,10 @@
+<div class="build">
+    <div class="build__item-section">
+        <span class="build__item-section--header">{{title}}</span>
+        <div class="build__item-section--body">
+            <div *ngFor="let item of items">
+                <app-component-items-item [item]="item"></app-component-items-item>
+            </div>
+        </div>
+    </div>
+</div>

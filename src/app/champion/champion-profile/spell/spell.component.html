@@ -1,0 +1,50 @@
+<div *ngIf="!!_spell" class="position-relative" (mouseover)="hovered=true"
+(mouseout)="hovered=false">
+    <img class="img-fluid spell-image" [src]="imageUrl + _spell.image.full">
+    <div class="key">{{key}}</div>
+    <!--ngbTooltip="{{_spell.description}}">-->
+
+    <ng-container *ngIf="(hovered) && !isPassive"> 
+        <div class="spell-tooltip">
+            <div class="spell-tooltip__header">
+                <div>
+                    [{{key}}] {{_spell.name}}
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="spell-tooltip__body">
+                {{_spell.description}}
+            </div>
+            <div class="spell-tooltip__footer">
+                <div>
+                    <div>
+                        Cooldown
+                    </div>
+                    <div>
+                        Cost
+                    </div>
+                    <ng-container *ngFor="let effect of _spell.leveltip.effect; let effectIndex = index">
+                        <div *ngIf="getStatNameFromLeveltipIndex(effectIndex) !== ''">
+                            {{getStatNameFromLeveltipIndex(effectIndex)}}
+                        </div>
+                    </ng-container>
+                </div>
+                <div>
+                    <div *ngIf="_spell.cooldown">
+                        <label *ngFor="let cd of _spell.cooldown; let last = last">{{cd}}{{last ? '' : '/'}}</label>
+                    </div>
+                    <div *ngIf="_spell.cost">
+                        <label *ngFor="let c of _spell.cost; let last = last">{{c}}{{last ? '' : '/'}}</label>
+                    </div>
+                    <ng-container *ngFor="let effect of _spell.leveltip.effect; let effectIndex = index">
+                        <div *ngIf="getStatNameFromLeveltipIndex(effectIndex) !== ''">
+                            {{_spell.effectBurn[getIndexFromLeveltipIndex(effectIndex)]}}
+                        </div>
+                    </ng-container>
+
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

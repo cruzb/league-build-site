@@ -1,0 +1,45 @@
+<div class="row rune-component-size">
+<ng-container *ngFor="let tree of selectedTrees; let treeIndex = index">
+    <div class="col-6 rune-tree">
+        
+        <div class="row clickable" (click)="tree.expanded = !tree.expanded" style="margin-bottom:-15px;">
+            <div class="col-2"></div>
+            <div class="col-3">
+                <img class="img-fluid" [src]="runeBaseUrl + tree.icon">        
+            </div>
+            <div class="col-5">
+                <h3>{{tree.name}}</h3>
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+        <br />
+        <div class="row rune-tree__select-tree" #collapse="ngbCollapse" [(ngbCollapse)]="!tree.expanded">
+            <div class="rune-tree__select-tree--row">
+                <ng-container *ngFor="let otherTree of runeTrees">
+                    <div class="clickable" *ngIf="otherTree.id !== selectedTrees[0].id && otherTree.id !== selectedTrees[1].id"
+                    (click)="switchTree(treeIndex, otherTree.id)">
+                        <img [src]="runeBaseUrl + otherTree.icon">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <ng-container *ngFor="let slot of tree.slots; let slotIndex = index;">
+                <div class="row rune-tree__row mb-4" *ngIf="!(treeIndex === 1 && slotIndex === 0)">
+                    <ng-container *ngFor="let rune of slot.runes; let runeIndex = index">
+                        <div class="col-3 rune-tree__row--rune clickable" (click)="slot.selectedIndex = runeIndex">
+                            <img [src]="runeBaseUrl + rune.icon" [class]="getClasses(treeIndex)"
+                            [ngClass]="{ 'unselected': runeIndex !== slot.selectedIndex, 
+                            'selected': runeIndex === slot.selectedIndex && !(slotIndex === 0 && treeIndex === 0) }">
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+
+        <app-component-runes-stats *ngIf="treeIndex === 1"></app-component-runes-stats>
+    </div>
+</ng-container>
+</div>

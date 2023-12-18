@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+:root {
+    --color-background: #121212;
+    --color-menu: #181818;
+    --color-gray-1: #404040;
+    --color-gray-2: #282828;
+    --color-text-primary: #FFF;
+    --color-text-secondary: #B3B3B3;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.container {
+    min-width: 1200px;
+}
+
+h1, h2, h3 {
+    color: var(--color-text-primary);
+}
+
+h4, h5, h6 {
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-text-secondary);
+}
+a:hover {
+    color: var(--color-text-primary) !important;
+}

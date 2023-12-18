@@ -1,0 +1,17 @@
+.item-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+
+    img {
+        width: 64px;
+    }
+
+    h6 {
+        font-size: 12px;
+        margin-bottom: 0 !important;
+    }
+}

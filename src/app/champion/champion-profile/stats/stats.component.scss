@@ -1,0 +1,14 @@
+.stats-panel {
+    max-width: 200px;
+    min-width: 150px;
+
+    &__header {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+
+        .color-override {
+            background-color: var(--color-gray-1) !important;
+        }
+    }
+}

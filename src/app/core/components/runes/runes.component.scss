@@ -1,0 +1,106 @@
+.rune-component-size {
+    max-width: 700px;
+    min-width: 525px;
+    margin: 0 !important;
+}
+
+.rune-tree {
+    &__name {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__select-tree {
+        //background-color: var(--color-gray-2);
+        
+        &--row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    
+        &--rune {
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-width: 64px;
+
+                &.selected {
+                    --box-shadow-color: white;
+                    box-shadow: 0 0 16px 3px var(--box-shadow-color);
+                    border-radius: 32px;
+
+                    &.blue {
+                        --box-shadow-color: #48abe0;
+                    }
+                    &.red {
+                        --box-shadow-color: #c64545;
+                    }
+                    &.green {
+                        --box-shadow-color: #a1d58b;
+                    }
+                    &.yellow {
+                        --box-shadow-color: #c08d4f;
+                    }
+                    &.purple {
+                        --box-shadow-color: #97a9eb;
+                    }
+                }
+            }
+
+            & .unselected {
+                filter: grayscale(0.8);
+            }
+        }
+    } 
+
+    &__stat-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        &--rune {
+            display: flex;
+            justify-content: center;
+            max-width: 10%;
+
+            img {
+                max-width: 64px;
+
+                &.selected {
+                    box-shadow: 0 0 5px 1px white;
+                    border-radius: 16px;
+                }
+            }
+
+            & .unselected {
+                filter: grayscale(1);
+            }
+        }
+    }
+
+    & .clickable {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+

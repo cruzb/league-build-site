@@ -1,0 +1,54 @@
+.spell-image {
+    max-width: 48px;
+    position: relative;
+}
+
+.key{
+    position: absolute;
+    top: 90%;
+    right: 50%;
+    transform: translate(50%, -25%);
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+    text-align: center;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+.spell-tooltip {
+    position: fixed;
+    z-index: 9999;
+    padding: 15px;
+    width: auto;
+    max-width: 400px;
+    transform: translate(-45%, 0%);
+    background-color: var(--color-menu);
+    border-radius: 15px;
+    border: 2px solid var(--color-gray-1);
+    
+    &__header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--color-gray-1);
+        margin-bottom: 7px;
+    }
+
+    &__body {
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--color-gray-1);
+        margin-bottom: 7px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
